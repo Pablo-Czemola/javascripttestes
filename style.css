@@ -1,0 +1,85 @@
+/* Estilos globais */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fonte divertida */
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+}
+
+/* Botões animados e coloridos */
+button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+/* Efeitos engraçados ao passar o mouse */
+button:hover {
+    transform: scale(1.1) rotate(5deg);
+    background-color: #ff4757;
+}
+
+/* Cabeçalhos maiores e chamativos */
+h1 {
+    color: #3742fa;
+    font-size: 36px;
+    text-shadow: 2px 2px #ff4757;
+    margin-bottom: 20px;
+}
+
+/* Parágrafos com efeitos divertidos */
+p {
+    font-size: 20px;
+    color: #2f3542;
+    animation: shake 0.5s;
+}
+
+/* Animação de sacudir o texto */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Links de navegação estilizados */
+nav a {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #1e90ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+    background-color: #00bfff;
+    transform: scale(1.1);
+}
+
+/* Estilo divertido para os textos mostrados/escondidos */
+#textToToggle {
+    color: #ff6348;
+    font-weight: bold;
+    font-size: 24px;
+    transition: opacity 0.3s;
+}
+
+#textToToggle[style="display: none;"] {
+    opacity: 0;
+}

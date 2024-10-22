@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Cliques e Adicionar Itens à Lista</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Contador de Cliques</h1>
+    <button id="clickCounterBtn">Clique aqui</button>
+    <p id="counter">Cliques: 0</p>
+
+    <h2>Adicionar Itens à Lista</h2>
+    <input type="text" id="itemInput" placeholder="Digite um item">
+    <button id="addItemBtn">Adicionar</button>
+
+    <ul id="itemList"></ul>
+    
+    <nav>
+        <a href="index2.html">Mudar Cor de Fundo e Texto</a> | 
+        <a href="index4.html">Mostrar/Esconder Texto</a>
+    </nav>
+
+    <script>
+    // Função de contador de cliques
+    let count = 0;
+    document.getElementById('clickCounterBtn').addEventListener('click', function() {
+        count++;
+        document.getElementById('counter').textContent = "Cliques: " + count;
+    });
+
+    // Função para adicionar itens à lista
+    document.getElementById('addItemBtn').addEventListener('click', function() {
+        const inputValue = document.getElementById('itemInput').value;
+        if (inputValue.trim() !== '') {
+            const li = document.createElement('li');
+            li.textContent = inputValue;
+            document.getElementById('itemList').appendChild(li);
+            document.getElementById('itemInput').value = ''; // Limpa o input após adicionar
+        }
+    });
+    </script>
+</body>
+</html>

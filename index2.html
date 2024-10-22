@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar Cor de Fundo e Texto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="titulo">Texto Original</h1>
+    <button onclick="mudarTexto()">Clique para mudar o texto</button>
+    
+    <h2>Mudar Cor de Fundo</h2>
+    <button id="changeColorBtn">Mudar Cor de Fundo</button>
+    
+    <nav>
+        <a href="index3.html">Contador de Cliques</a> | 
+        <a href="index4.html">Mostrar/Esconder Texto</a>
+    </nav>
+
+    <script>
+    // Função para mudar o texto
+    function mudarTexto() {
+        document.getElementById('titulo').innerText = 'Texto alterado pelo JavaScript!';
+    }
+
+    // Função para mudar a cor de fundo
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    document.getElementById('changeColorBtn').addEventListener('click', function() {
+        document.body.style.backgroundColor = getRandomColor();
+    });
+    </script>
+</body>
+</html>

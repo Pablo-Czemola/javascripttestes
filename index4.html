@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar/Esconder Texto e Mover Elemento</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #square {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mostrar/Esconder Texto</h1>
+    <button id="toggleTextBtn">Esconder</button>
+    <p id="textToToggle">Este é o texto que será mostrado ou escondido.</p>
+
+    <h2>Mover o Quadrado</h2>
+    <div id="square"></div>
+    <p>Use as teclas de seta para mover o quadrado vermelho!</p>
+
+    <nav>
+        <a href="pagina1.html">Mudar Cor de Fundo e Texto</a> | 
+        <a href="pagina2.html">Contador de Cliques e Adicionar Itens</a>
+    </nav>
+
+    <script>
+    // Função para mostrar/esconder texto
+    const textToToggle = document.getElementById('textToToggle');
+    const toggleTextBtn = document.getElementById('toggleTextBtn');
+
+    toggleTextBtn.addEventListener('click', function() {
+        if (textToToggle.style.display === 'none') {
+            textToToggle.style.display = 'block';
+            toggleTextBtn.textContent = 'Esconder';
+        } else {
+            textToToggle.style.display = 'none';
+            toggleTextBtn.textContent = 'Mostrar';
+        }
+    });
+
+    // Função para mover o quadrado
+    const square = document.getElementById('square');
+    let topPosition = 50;
+    let leftPosition = 50;
+
+    document.addEventListener('keydown', function(event) {
+        const step = 10; // Quantos pixels o quadrado se moverá a cada tecla pressionada
+        switch(event.key) {
+            case 'ArrowUp':
+                topPosition -= step;
+                break;
+            case 'ArrowDown':
+                topPosition += step;
+                break;
+            case 'ArrowLeft':
+                leftPosition -= step;
+                break;
+            case 'ArrowRight':
+                leftPosition += step;
+                break;
+        }
+        square.style.top = topPosition + 'px';
+        square.style.left = leftPosition + 'px';
+    });
+    </script>
+</body>
+</html>
